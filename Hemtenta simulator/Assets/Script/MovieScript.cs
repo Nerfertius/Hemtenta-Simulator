@@ -10,6 +10,7 @@ public class MovieScript : MonoBehaviour
 	private MovieTexture m_texture;
 	private Renderer r;
 	private AudioSource a_source;
+	private int randomHold;
 
 	void Start ()
     {
@@ -21,6 +22,14 @@ public class MovieScript : MonoBehaviour
 	
 	void Update ()
     {
+		//Limit the creation of random numbers
+		//Make a function that only is called
+		//only when a video ends
+
+
+		randomHold = Random.Range(0, movies.Count - 1);
+		//Debug.Log("Video: " + m_texture);
+		Debug.Log("randomHold: " + randomHold);
 		if (m_texture.isPlaying == false)
 		{
 			//r.material.mainTexture = StartMovie;
@@ -30,7 +39,7 @@ public class MovieScript : MonoBehaviour
 
 			//if (StartMovie.isPlaying == false)
 			//{
-				m_texture = movies[Random.Range(0, movies.Count - 1)];
+				m_texture = movies[randomHold];
 				r.material.mainTexture = m_texture;
 				a_source.clip = m_texture.audioClip;
 				a_source.Play();
