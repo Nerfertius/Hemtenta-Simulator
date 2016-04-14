@@ -10,7 +10,6 @@ public class MovieScript : MonoBehaviour
 	private MovieTexture m_texture;
 	private Renderer r;
 	private AudioSource a_source;
-	private int randomHold;
 
 	void Start ()
     {
@@ -18,33 +17,39 @@ public class MovieScript : MonoBehaviour
 		m_texture = StartMovie;
 		r.material.mainTexture = m_texture;
 		a_source = gameObject.GetComponent<AudioSource>();
-	}
+
+		NewClip();
+    }
 	
 	void Update ()
     {
-		//Limit the creation of random numbers
-		//Make a function that only is called
-		//only when a video ends
+		//r.material.mainTexture = StartMovie;
+		//a_source.clip = m_texture.audioClip;
+		//a_source.Play();
+		//StartMovie.Play();
 
+		//if (StartMovie.isPlaying == false)
+		//{
+		//}
+	}
 
-		randomHold = Random.Range(0, movies.Count - 1);
-		//Debug.Log("Video: " + m_texture);
-		Debug.Log("randomHold: " + randomHold);
-		if (m_texture.isPlaying == false)
-		{
-			//r.material.mainTexture = StartMovie;
-			//a_source.clip = m_texture.audioClip;
-			//a_source.Play();
-			//StartMovie.Play();
+	void NewClip()
+	{
+		m_texture = movies[Random.Range(0, movies.Count - 1)];
+		Debug.Log(m_texture);
+		r.material.mainTexture = m_texture;
+		a_source.clip = m_texture.audioClip;
+		m_texture.Stop();
+		a_source.Play();
+		m_texture.Play();
+		TimeBetweenClips(m_texture.duration);
+	}
 
-			//if (StartMovie.isPlaying == false)
-			//{
-				m_texture = movies[randomHold];
-				r.material.mainTexture = m_texture;
-				a_source.clip = m_texture.audioClip;
-				a_source.Play();
-				m_texture.Play();
-			//}
-		}
-    }
+	IEnumerator TimeBetweenClips(float time)
+	{
+		Debug.Log("Waiting...");
+		yield return new WaitForSeconds(time);
+		Debug.Log("Going");
+		NewClip();
+	}
 }
