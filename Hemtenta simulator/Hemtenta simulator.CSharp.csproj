@@ -73,11 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
-    <Compile Include="Assets\Script\GameScript.cs" />
-    <Compile Include="Assets\Script\MousePosCheck.cs" />
-    <Compile Include="Assets\Script\MovieScript.cs" />
-    <Compile Include="Assets\Script\Timer.cs" />
-    <Compile Include="Assets\movieScript.cs" />
+    <Compile Include="Assets\Scripts\GameScript.cs" />
+    <Compile Include="Assets\Scripts\MousePosCheck.cs" />
+    <Compile Include="Assets\Scripts\MovieScript.cs" />
+    <Compile Include="Assets\Scripts\ThreeLifeVersion.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Office Furnitures Pack\ReadMe.txt" />
