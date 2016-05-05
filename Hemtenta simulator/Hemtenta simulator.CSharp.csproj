@@ -76,8 +76,9 @@
     <Compile Include="Assets\Scripts\GameScript.cs" />
     <Compile Include="Assets\Scripts\MousePosCheck.cs" />
     <Compile Include="Assets\Scripts\MovieScript.cs" />
+    <Compile Include="Assets\Scripts\ScreenChecker.cs" />
     <Compile Include="Assets\Scripts\ThreeLifeVersion.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\flashScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Office Furnitures Pack\ReadMe.txt" />

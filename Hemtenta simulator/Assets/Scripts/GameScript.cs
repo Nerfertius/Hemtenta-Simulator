@@ -26,7 +26,7 @@ public class GameScript : MonoBehaviour
             VictoryObject.SetActive(true);
 			End = true;
         }
-        else if (Timer.timer >= Timer.TimerMax)
+        else if (ScreenChecker.timer >= ScreenChecker.TimerMax)
         {
             Time.timeScale = 0;                 //pause game
             AudioListener.pause = true;         //pause audio
