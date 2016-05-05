@@ -1,23 +1,33 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class flashScript : MonoBehaviour
+public class FlashScript : MonoBehaviour
 {
-	private Renderer rend;
+	private Image img;
+	private float lerp;
+
+	public Color startColor;
+	public Color changeColor;
+	public float duration = 2.0F;
 
 	void Start ()
 	{
-		rend = gameObject.GetComponent<Renderer>();
-	}
+		img = GetComponent<Image>();
+		img.material.color = startColor;
+    }
 	
 	void Update ()
 	{
-		
+		lerp += Time.time;
+		Debug.Log(lerp);
+		img.color = Color.Lerp(startColor, changeColor, lerp);
 	}
 
 	void Flash()
 	{
 		//flash the alpha color
-		rend.material.SetColor()
+		
+		//img.color = endColor;
 	}
 }

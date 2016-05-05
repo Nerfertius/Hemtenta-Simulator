@@ -37,8 +37,8 @@ public class MovieScript : MonoBehaviour
 	void NewClip()
 	{
 		m_texture = movies[Random.Range(0, movies.Count - 1)];
-		Debug.Log(m_texture);
-		Debug.Log(PreviousMovie);
+		//Debug.Log(m_texture);
+		//Debug.Log(PreviousMovie);
 
 		if (m_texture == PreviousMovie)
 		{
@@ -56,9 +56,9 @@ public class MovieScript : MonoBehaviour
 
 	IEnumerator TimeBetweenClips()
 	{
-		Debug.Log("Waiting...");
+		//Debug.Log("Waiting...");
 		yield return new WaitForSeconds(m_texture.duration + 0.5F);
-		Debug.Log("Going");
+		//Debug.Log("Going");
 		NewClip();
 	}
 }

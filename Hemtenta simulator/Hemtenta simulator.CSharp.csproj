@@ -73,12 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Clock\Scripts\Clock.cs" />
+    <Compile Include="Assets\Scripts\FlashScript.cs" />
     <Compile Include="Assets\Scripts\GameScript.cs" />
     <Compile Include="Assets\Scripts\MousePosCheck.cs" />
     <Compile Include="Assets\Scripts\MovieScript.cs" />
     <Compile Include="Assets\Scripts\ScreenChecker.cs" />
     <Compile Include="Assets\Scripts\ThreeLifeVersion.cs" />
-    <Compile Include="Assets\Scripts\flashScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Office Furnitures Pack\ReadMe.txt" />
